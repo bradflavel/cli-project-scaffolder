@@ -1,0 +1,19 @@
+{
+  "name": "cli-project-scaffolder",
+  "version": "0.1.0",
+  "description": "A CLI tool to scaffold new projects with pre-configured templates and boilerplate",
+  "keywords": [
+    "cli",
+    "scaffolding",
+    "boilerplate",
+    "project-generator",
+    "templates"
+  ],
+  "license": "MIT",
+  "author": "Brad Flavel",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
