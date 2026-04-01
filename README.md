@@ -66,6 +66,13 @@ Next steps:
   npm run dev
 ```
 
+## Coming soon
+- next-app
+- fastapi
+- react-app
+- django-api
+- fullstack
+
 ## License
 
 MIT
