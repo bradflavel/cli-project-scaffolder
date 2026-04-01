@@ -1,0 +1,11 @@
+{
+  "name": "{{PROJECT_NAME}}",
+  "version": "0.1.0",
+  "description": "{{DESCRIPTION}}",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js --watch"
+  },
+  "type": "module"
+}
