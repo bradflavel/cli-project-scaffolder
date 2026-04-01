@@ -13,15 +13,24 @@
   "author": "Brad Flavel",
   "type": "module",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bradflavel/cli-project-scaffolder.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "hello": "./src/index.js"
+    "scaffold": "src/index.js"
   },
   "dependencies": {
     "commander": "^14.0.3",
     "inquirer": "^12.11.1",
     "picocolors": "^1.1.1"
-  }
+  },
+  "files": [
+    "src/",
+    "templates",
+    "README.md"
+  ]
 }
