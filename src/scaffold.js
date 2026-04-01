@@ -23,7 +23,8 @@ async function copyTemplateDir(sourceDir, targetDir, replacements) {
 
   for (const entry of entries) {
     const sourcePath = path.join(sourceDir, entry.name);
-    const targetPath = path.join(targetDir, entry.name);
+    const fileName = entry.name === 'gitignore' ? '.gitignore' : entry.name;
+    const targetPath = path.join(targetDir, fileName);
 
     if (entry.isDirectory()) {
       await copyTemplateDir(sourcePath, targetPath, replacements);

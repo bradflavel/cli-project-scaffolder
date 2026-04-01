@@ -15,7 +15,7 @@ npm install -g cli-project-scaffolder
 Run the create command and answer the prompts:
 
 ```bash
-hello create
+scaffold create
 ```
 
 ### With flags
@@ -23,7 +23,7 @@ hello create
 Skip the prompts by passing arguments directly:
 
 ```bash
-hello create my-app --template express-api
+scaffold create my-app --template express-api
 ```
 
 ### Options
@@ -52,7 +52,7 @@ Each scaffolded project comes with:
 ## Example
 
 ```
-$ hello create my-api --template express-api
+$ scaffold create my-api --template express-api
 
 Hi, welcome to the CLI Project Scaffolder
 ✔ What is the description of your project? A REST API for my app
