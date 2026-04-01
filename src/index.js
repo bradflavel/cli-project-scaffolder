@@ -5,6 +5,7 @@ import { generatePrompts } from "./prompts.js";
 import fsSync from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import pc from 'picocolors'
 
 const addProgram = new Command()
 const __filename = fileURLToPath(import.meta.url);
@@ -25,7 +26,7 @@ addProgram.command('create')
 
             if (fsSync.existsSync(newDestination)) {
                 
-                console.log("This folder already exists. You will need to choose another project name")
+                console.log(pc.red(`This folder already exists. You will need to choose another project name`))
                 name = undefined;
             }
             
@@ -34,7 +35,7 @@ addProgram.command('create')
             const templateDir = path.join(__dirname, '..', 'templates', options.template)
 
             if (!fsSync.existsSync(templateDir)) {
-                console.log("This template type doesn't exist. You will need to choose another")
+                console.log(pc.red(`This template type doesn't exist. You will need to choose another`))
                 options.template = undefined;
             }
     
@@ -44,15 +45,16 @@ addProgram.command('create')
         await generateProject(finalAnswers.name, finalAnswers.description, finalAnswers.template)
         const finalFolder = path.join(process.cwd(), finalAnswers.name);
 
-        console.log(`
-        Success! You've created ${finalAnswers.name} using the ${finalAnswers.template} template.
-        Your project lives at ${finalFolder}
+        console.log(pc.white(`
+        ${pc.green("Success!")} You've created ${pc.bold(finalAnswers.name)} using the ${pc.bold(finalAnswers.template)} template.
+        Your project lives at ${pc.bold('"' + finalFolder + '"')}
 
         Next steps:
-        cd ${finalAnswers.name}
-        npm install
-        npm run dev
-        `)
+        ${pc.cyan("cd " + finalAnswers.name)}
+        ${pc.cyan("npm install")}
+        ${pc.cyan("npm run dev")}
+        
+        `))
 
     })
 
