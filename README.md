@@ -38,14 +38,16 @@ scaffold create my-app --template express-api
 
 - **express-api** — A Node.js Express server with ES Modules, dev/start scripts, and a basic route
 - **node-starter** — A minimal Node.js starter for scripts, utilities, or any Node project
+- **react-app** — A React starter powered by Vite with hot module replacement
+- **fastapi** — A Python FastAPI server with uvicorn and auto-generated API docs
 
 ## What You Get
 
 Each scaffolded project comes with:
 
-- `package.json` with your project name and description
-- `index.js` entry point ready to run
-- `.gitignore` configured for Node.js
+- A ready-to-run project with your chosen framework
+- Your project name and description pre-filled throughout
+- `.gitignore` configured for your stack
 - `.env.example` for environment variables
 - `README.md` with install and run instructions
 
@@ -68,8 +70,6 @@ Next steps:
 
 ## Coming soon
 - next-app
-- fastapi
-- react-app
 - django-api
 - fullstack
 

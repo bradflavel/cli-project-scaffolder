@@ -44,6 +44,24 @@ addProgram.command('create')
         const finalAnswers = await generatePrompts(name, options.template)
         await generateProject(finalAnswers.name, finalAnswers.description, finalAnswers.template)
         const finalFolder = path.join(process.cwd(), finalAnswers.name);
+        const templateInstructions = {
+            "express-api": {
+                install: "npm install",
+                run: "npm run dev"
+            },
+            "node-starter": {
+                install: "npm install",
+                run: "npm run dev"
+            },
+            "react-app": {
+                install: "npm install",
+                run: "npm run dev"
+            },
+            "fastapi": {
+                install: "pip install -r requirements.txt",
+                run: "python -m uvicorn main:app --reload"
+            }
+        }
 
         console.log(pc.white(`
         ${pc.green("Success!")} You've created ${pc.bold(finalAnswers.name)} using the ${pc.bold(finalAnswers.template)} template.
@@ -51,8 +69,8 @@ addProgram.command('create')
 
         Next steps:
         ${pc.cyan("cd " + finalAnswers.name)}
-        ${pc.cyan("npm install")}
-        ${pc.cyan("npm run dev")}
+        ${pc.cyan(templateInstructions[finalAnswers.template]?.install)}
+        ${pc.cyan(templateInstructions[finalAnswers.template]?.run)}
         
         `))
 
