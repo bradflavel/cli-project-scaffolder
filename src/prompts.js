@@ -28,7 +28,7 @@ export async function generatePrompts(name, template) {
     questions.push(description)
 
     if (!template) {
-        const template = { name: "templateName", type: "list", message: "What type of project?", choices: ["express-api", "node-starter"]}
+        const template = { name: "templateName", type: "list", message: "What type of project?", choices: ["express-api", "node-starter", "react-app"]}
         questions.push(template)
     }
 
